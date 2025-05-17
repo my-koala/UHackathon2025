@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://7g47fxgqcg61"]
+
+[ext_resource type="Script" uid="uid://bb26s1tf5ti1f" path="res://scripts/microgame/microgame.gd" id="1_b1atn"]
+
+[node name="microgame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b1atn")
+metadata/_custom_type_script = "uid://bb26s1tf5ti1f"
