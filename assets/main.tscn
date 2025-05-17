@@ -1,15 +1,154 @@
-[gd_scene load_steps=11 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=19 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" uid="uid://dc7164llywjw6" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
 [ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="2_06ig3"]
 [ext_resource type="Texture2D" uid="uid://bwly1nwkb1tnf" path="res://assets/monitor_frame.png" id="2_836ik"]
+[ext_resource type="PackedScene" uid="uid://3iodv31k20n7" path="res://assets/microgame/checkbox/checkbox.tscn" id="3_ujfqy"]
+[ext_resource type="PackedScene" uid="uid://vmtxgpx5i7lx" path="res://assets/microgame/password/password.tscn" id="4_qdlv5"]
+[ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
 
-[sub_resource type="Curve" id="Curve_2d37k"]
+[sub_resource type="Curve" id="Curve_836ik"]
+_limits = [1.0, 4.0, 0.0, 32.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(32, 4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ujfqy"]
+_limits = [0.0, 1.0, 0.0, 32.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(32, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_836ik"]
 blend_mode = 4
 light_mode = 1
+
+[sub_resource type="Animation" id="Animation_qdlv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button_restart:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ujfqy"]
+resource_name = "gameover_enter"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button_restart:disabled")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_tkxyu"]
+resource_name = "gameover_exit"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button_restart:disabled")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdlv5"]
+_data = {
+&"RESET": SubResource("Animation_qdlv5"),
+&"gameover_enter": SubResource("Animation_ujfqy"),
+&"gameover_exit": SubResource("Animation_tkxyu")
+}
 
 [sub_resource type="Animation" id="Animation_db5cl"]
 resource_name = "RESET"
@@ -52,22 +191,10 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("background/overlay:color:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
+tracks/3/path = NodePath("background/overlay:color")
+tracks/3/interp = 2
+tracks/3/loop_wrap = false
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("background/overlay:color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -186,10 +313,12 @@ _data = {
 &"microgame_exit": SubResource("Animation_836ik")
 }
 
-[node name="main" type="Node"]
+[node name="main" type="Node" node_paths=PackedStringArray("micro_games")]
 script = ExtResource("1_2d37k")
-lives = null
-minigame_time_scale_curve = SubResource("Curve_2d37k")
+micro_games = [NodePath("monitor/sub_viewport_container/sub_viewport/checkbox"), NodePath("monitor/sub_viewport_container/sub_viewport/password"), NodePath("monitor/sub_viewport_container/sub_viewport/select_image")]
+lives = 2
+micro_game_time_scale_curve = SubResource("Curve_836ik")
+micro_game_difficulty_scale_curve = SubResource("Curve_ujfqy")
 
 [node name="background" type="Control" parent="."]
 layout_mode = 3
@@ -208,6 +337,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="lives_container" type="HBoxContainer" parent="background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 56.0
+grow_horizontal = 2
+alignment = 1
 
 [node name="monitor" type="Control" parent="."]
 layout_mode = 3
@@ -241,7 +379,14 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 script = ExtResource("1_db5cl")
 
+[node name="checkbox" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("3_ujfqy")]
+
+[node name="password" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("4_qdlv5")]
+
+[node name="select_image" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("6_qdlv5")]
+
 [node name="sprite_2d" type="Sprite2D" parent="monitor/sub_viewport_container/sub_viewport"]
+visible = false
 position = Vector2(190, 121)
 scale = Vector2(7.64063, 4.07813)
 texture = ExtResource("2_06ig3")
@@ -255,8 +400,66 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.45, 1.45)
 pivot_offset = Vector2(200, 150)
+mouse_filter = 2
 texture = ExtResource("2_836ik")
 expand_mode = 1
+
+[node name="gameover" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="color_rect" type="ColorRect" parent="gameover"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[node name="label" type="Label" parent="gameover"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 28.0
+offset_right = 366.0
+offset_bottom = 77.0
+text = "game over
+(prahas needs to make a game over screen)"
+horizontal_alignment = 1
+
+[node name="button_restart" type="Button" parent="gameover"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -54.0
+offset_top = -31.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+action_mode = 0
+text = "restart game"
+
+[node name="label_score" type="Label" parent="gameover"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 135.0
+offset_right = 206.0
+offset_bottom = 158.0
+text = "SCORE: "
+
+[node name="animation_player" type="AnimationPlayer" parent="gameover"]
+libraries = {
+&"": SubResource("AnimationLibrary_qdlv5")
+}
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 libraries = {
