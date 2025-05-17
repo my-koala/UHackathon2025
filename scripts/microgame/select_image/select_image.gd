@@ -31,7 +31,7 @@ func start(time_scale: float, difficulty_scaling: float) -> void:
 	
 	# Populate our texture buttons with random images from our subset
 	for button: TextureButton in buttons:
-		button.set_pressed_no_signal(false)
+		button.button_pressed = false
 		
 		var image: Texture2D = image_library[randi() %  image_library.size()]
 		button.texture_normal = image
@@ -45,13 +45,17 @@ func start(time_scale: float, difficulty_scaling: float) -> void:
 		buttons[randi() % buttons.size()].texture_normal = _expected_image
 		_expected_buttons = 1
 	
-	_preview_text.text = "Select all: "
+	_preview_text.clear()
+	_preview_text.add_text("Select all: ")
 	_preview_text.add_image(_expected_image, 32, 32)
 	
 	# Start
 	super(time_scale, difficulty_scaling)
 
 func _on_texture_toggle(button_idx: int) -> void:
+	if !_running:
+		return
+	
 	var button: TextureButton = buttons[button_idx]
 	
 	if button.pressed:
