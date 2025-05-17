@@ -27,7 +27,7 @@ func complete(success: bool) -> void:
 	if !_running:
 		return
 	
-	on_complete.emit(false)
+	on_complete.emit(success)
 	_running = false
 	
 	print("Microgame completed. Successful: " + str(success))
