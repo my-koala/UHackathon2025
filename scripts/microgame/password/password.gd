@@ -10,7 +10,7 @@ var password_label : Label = $label2
 @onready
 var password_entry : LineEdit = $text_edit
 
-var _char_list : String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+var _char_list : String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ23456789"
 
 func start(time_scale: float, difficulty_scaling: float) -> void:
 	password_label.text = ""
