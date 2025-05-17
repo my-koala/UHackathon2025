@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://p7mc2hcyvbwt"]
+
+[ext_resource type="Shader" uid="uid://bpdffbbtyguqy" path="res://shaders/distort_text.tres" id="1_2nrq6"]
+
+[resource]
+shader = ExtResource("1_2nrq6")
+shader_parameter/XStrength = 1.42
+shader_parameter/DifficultyScale = 1.2
+shader_parameter/XWidthStrength = -0.038
+shader_parameter/YStrength = 3.5
