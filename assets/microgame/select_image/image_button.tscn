@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://np2gxgfygelv"]
+
+[node name="texture_button" type="TextureButton"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(48, 48)
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="color_rect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[connection signal="toggled" from="." to="color_rect" method="set_visible"]

@@ -67,6 +67,8 @@ func _on_texture_pressed(button_idx: int) -> void:
 	
 	if button_texture == _expected_image:
 		_correct_buttons = min(buttons.size(), _correct_buttons + 1)
+	else:
+		complete(false)
 	
 	_process_images()
 
