@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://fmot7xfs8qm8"]
+[gd_scene load_steps=6 format=3 uid="uid://fmot7xfs8qm8"]
 
 [ext_resource type="Script" uid="uid://4bpnmghu73mc" path="res://scripts/microgame/select_image/select_image.gd" id="1_f4jky"]
 [ext_resource type="Texture2D" uid="uid://jgvgps126754" path="res://assets/cursor/cursor_arrow.png" id="2_qira8"]
 [ext_resource type="Texture2D" uid="uid://cstl3soj1n5fu" path="res://assets/cursor/cursor_hand.png" id="3_ig40c"]
 [ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="4_ms7y0"]
+[ext_resource type="PackedScene" uid="uid://np2gxgfygelv" path="res://assets/microgame/select_image/image_button.tscn" id="5_ig40c"]
 
 [node name="select_image" type="Control" node_paths=PackedStringArray("buttons")]
 layout_mode = 3
@@ -48,65 +49,29 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
-[node name="texture_button" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button2" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button2" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button3" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button3" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button4" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button4" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button5" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button5" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button6" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button6" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button7" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button7" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button8" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button8" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0
 
-[node name="texture_button9" type="TextureButton" parent="grid_container"]
-custom_minimum_size = Vector2(48, 48)
+[node name="texture_button9" parent="grid_container" instance=ExtResource("5_ig40c")]
 layout_mode = 2
-toggle_mode = true
-ignore_texture_size = true
-stretch_mode = 0

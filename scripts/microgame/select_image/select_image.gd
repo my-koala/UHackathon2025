@@ -26,17 +26,12 @@ func start(time_scale: float) -> void:
 	_correct_buttons = 0
 	_expected_buttons = 0
 	
-	# Select a smaller selection of 4 textures to use for the microgame
-	var button_textures: Array[Texture2D] = []
-	for i: int in range(4):
-		button_textures.append(image_library[randi() % image_library.size()])
-	
 	# Our expected image is a random one of these 4
-	_expected_image = button_textures[randi() % 4]
+	_expected_image = image_library[randi() % image_library.size()]
 	
 	# Populate our texture buttons with random images from our subset
 	for button: TextureButton in buttons:
-		var image: Texture2D = button_textures[randi() % 4]
+		var image: Texture2D = image_library[randi() %  image_library.size()]
 		button.texture_normal = image
 		
 		# Increment expected count if texture is expected
@@ -67,6 +62,8 @@ func _on_texture_pressed(button_idx: int) -> void:
 	
 	if button_texture == _expected_image:
 		_correct_buttons = min(buttons.size(), _correct_buttons + 1)
+	else:
+		complete(false)
 	
 	_process_images()
 
