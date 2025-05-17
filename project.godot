@@ -48,6 +48,10 @@ mouse_cursor/custom_image="uid://jiltyvde24x6"
 
 naming/node_name_casing=2
 
+[gui]
+
+theme/custom="uid://bjelpvayxb0ui"
+
 [physics]
 
 common/physics_ticks_per_second=20
