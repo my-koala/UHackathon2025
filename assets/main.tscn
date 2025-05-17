@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
-[ext_resource type="Script" uid="uid://dc7164llywjw6" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
+[ext_resource type="Script" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
 [ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="2_06ig3"]
 [ext_resource type="Texture2D" uid="uid://bwly1nwkb1tnf" path="res://assets/monitor_frame.png" id="2_836ik"]
 [ext_resource type="PackedScene" uid="uid://3iodv31k20n7" path="res://assets/microgame/checkbox/checkbox.tscn" id="3_ujfqy"]
 [ext_resource type="PackedScene" uid="uid://vmtxgpx5i7lx" path="res://assets/microgame/password/password.tscn" id="4_qdlv5"]
 [ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
 [ext_resource type="Material" uid="uid://dsrfmxkhxatis" path="res://materials/crt.tres" id="8_tkxyu"]
-[ext_resource type="Material" uid="uid://mxqp3miyfvbt" path="res://assets/monitor/noise_material.tres" id="9_fphxj"]
+[ext_resource type="Material" path="res://assets/monitor/noise_material.tres" id="9_fphxj"]
 
 [sub_resource type="Curve" id="Curve_836ik"]
 _limits = [1.0, 4.0, 0.0, 32.0]
@@ -548,6 +548,22 @@ visible = false
 position = Vector2(190, 121)
 scale = Vector2(7.64063, 4.07813)
 texture = ExtResource("2_06ig3")
+
+[node name="progress_bar" type="ProgressBar" parent="monitor/sub_viewport_container/sub_viewport"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 8.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.125
+value = 1.0
+show_percentage = false
 
 [node name="color_noise" type="ColorRect" parent="monitor"]
 material = ExtResource("9_fphxj")

@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://cjl4wykk6sdc0"]
+[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://bk6rtplhuhbc7"]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_nkhpx"]
 default_input_values = [0, Quaternion(0, 0, 0, 0)]
