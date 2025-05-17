@@ -1,0 +1,15 @@
+[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://caccu660klim6"]
+
+[sub_resource type="Gradient" id="Gradient_kty3s"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kty3s"]
+resource_local_to_scene = true
+noise_type = 0
+seed = 1020
+frequency = 0.307
+offset = Vector3(0, 133.33, 0)
+
+[resource]
+resource_name = "test"
+color_ramp = SubResource("Gradient_kty3s")
+noise = SubResource("FastNoiseLite_kty3s")

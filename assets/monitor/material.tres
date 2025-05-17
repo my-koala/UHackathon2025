@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://0l5y8ob5olrs"]
+
+[ext_resource type="Shader" uid="uid://jnhugy56jqcm" path="res://shaders/crt.tres" id="1_kty3s"]
+[ext_resource type="Texture2D" uid="uid://caccu660klim6" path="res://assets/monitor/crt_noise.tres" id="2_4f62p"]
+
+[resource]
+shader = ExtResource("1_kty3s")
+shader_parameter/BaseTint = Color(1, 1, 1, 0.439216)
+shader_parameter/NoiseScrollSpeed = Vector2(0, 40)
+shader_parameter/CRTNoise = ExtResource("2_4f62p")
+shader_parameter/NoiseStrength = 0.84
+shader_parameter/ScanLineTint = Color(0.443137, 0.443137, 0.443137, 0.537255)
+shader_parameter/ScanLineWidth = 0.92
+shader_parameter/ScanLineHeight = 3.68
+shader_parameter/ScanLineScrollSpeed = -0.3
+shader_parameter/FinalTint = Color(1, 1, 1, 0.215686)
