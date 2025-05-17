@@ -306,7 +306,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/path = NodePath("monitor/color_crt:modulate")
 tracks/4/interp = 2
 tracks/4/loop_wrap = false
@@ -318,7 +318,7 @@ tracks/4/keys = {
 }
 tracks/5/type = "value"
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/path = NodePath("monitor/color_crt:visible")
 tracks/5/interp = 0
 tracks/5/loop_wrap = false
@@ -335,7 +335,7 @@ tracks/6/path = NodePath("monitor/color_noise:modulate")
 tracks/6/interp = 2
 tracks/6/loop_wrap = false
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
+"times": PackedFloat32Array(0, 1.25, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -407,7 +407,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/path = NodePath("monitor/color_crt:modulate")
 tracks/4/interp = 2
 tracks/4/loop_wrap = false
@@ -419,7 +419,7 @@ tracks/4/keys = {
 }
 tracks/5/type = "value"
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/path = NodePath("monitor/color_crt:visible")
 tracks/5/interp = 0
 tracks/5/loop_wrap = false
@@ -486,13 +486,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="lives_container" type="HBoxContainer" parent="background"]
+[node name="display_a" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="lives_container" type="HBoxContainer" parent="display_a"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 16.0
 offset_bottom = 56.0
 grow_horizontal = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="monitor" type="Control" parent="."]
@@ -550,6 +560,7 @@ material = ExtResource("8_tkxyu")
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 300.0
+mouse_filter = 2
 
 [node name="monitor" type="TextureRect" parent="monitor"]
 layout_mode = 1
@@ -563,6 +574,27 @@ pivot_offset = Vector2(200, 150)
 mouse_filter = 2
 texture = ExtResource("2_836ik")
 expand_mode = 1
+
+[node name="display_b" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="label" type="Label" parent="display_b"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Round 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="gameover" type="Control" parent="."]
 visible = false

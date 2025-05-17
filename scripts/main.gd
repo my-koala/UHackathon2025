@@ -26,7 +26,7 @@ var micro_game_difficulty_scale_curve: Curve = Curve.new()
 var _life_instances: Array[LifeInstance] = []
 
 @onready
-var _life_instance_container: HBoxContainer = $background/lives_container as HBoxContainer
+var _life_instance_container: HBoxContainer = $display_a/lives_container as HBoxContainer
 @onready
 var _animation_player: AnimationPlayer = $animation_player as AnimationPlayer
 @onready
@@ -98,6 +98,7 @@ func _on_current_microgame_completed(success: bool) -> void:
 	
 	if _lives <= 0:
 		print("game over")
+		await get_tree().create_timer(1.0).timeout
 		_gameover_animation_player.play(&"gameover_enter")
 		loop_stop()
 	else:
@@ -116,6 +117,7 @@ func _set_next_microgame() -> void:
 			micro_game.visible = false
 	
 	# TODO: await for animation?
+	await get_tree().create_timer(1.0).timeout
 	
 	_animation_player.play(&"microgame_enter")
 	await _animation_player.animation_finished
