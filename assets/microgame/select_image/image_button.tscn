@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://np2gxgfygelv"]
+[gd_scene format=3 uid="uid://np2gxgfygelv"]
 
 [node name="texture_button" type="TextureButton"]
 texture_filter = 1

@@ -22,7 +22,7 @@ func _ready() -> void:
 		button.pressed.connect(func() -> void: _on_texture_toggle(i))
 	super()
 
-func start(time_scale: float) -> void:
+func start(time_scale: float, difficulty_scaling: float) -> void:
 	_correct_buttons = 0
 	_expected_buttons = 0
 	
@@ -47,7 +47,7 @@ func start(time_scale: float) -> void:
 	_preview_text.add_image(_expected_image, 32, 32)
 	
 	# Start
-	super(time_scale)
+	super(time_scale, difficulty_scaling)
 
 func _on_texture_toggle(button_idx: int) -> void:
 	var button: TextureButton = buttons[button_idx]

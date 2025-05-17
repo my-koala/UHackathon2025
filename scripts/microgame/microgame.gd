@@ -12,13 +12,13 @@ var _running: bool = false
 
 ## DEBUG UNTIL THE GAME LOOP IS DONE
 func _ready() -> void:
-	start(1)
+	start(1, 0)
 
 func get_time_left() -> float:
 	return _time_left
 
 ## Starts the microgame
-func start(time_scale: float) -> void:
+func start(time_scale: float, difficulty_scale: float) -> void:
 	_time_scale = time_scale
 	_time_left = time_duration
 	_running = true
