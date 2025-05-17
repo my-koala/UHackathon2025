@@ -119,5 +119,6 @@ func _set_next_microgame() -> void:
 	
 	_animation_player.play(&"microgame_enter")
 	await _animation_player.animation_finished
-	
-	_micro_game_current.start(micro_game_time_scale_curve.sample(float(_micro_game_iteration)))
+	var time_scale: float = micro_game_time_scale_curve.sample(float(_micro_game_iteration))
+	var difficulty_scale: float = micro_game_difficulty_scale_curve.sample(float(_micro_game_iteration))
+	_micro_game_current.start(time_scale, difficulty_scale)

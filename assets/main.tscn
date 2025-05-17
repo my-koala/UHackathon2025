@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=19 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" uid="uid://dc7164llywjw6" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwly1nwkb1tnf" path="res://assets/monitor_frame.png" id="2_836ik"]
 [ext_resource type="PackedScene" uid="uid://3iodv31k20n7" path="res://assets/microgame/checkbox/checkbox.tscn" id="3_ujfqy"]
 [ext_resource type="PackedScene" uid="uid://vmtxgpx5i7lx" path="res://assets/microgame/password/password.tscn" id="4_qdlv5"]
+[ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
 
 [sub_resource type="Curve" id="Curve_836ik"]
 _limits = [1.0, 4.0, 0.0, 32.0]
@@ -13,6 +14,9 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(32, 4), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_ujfqy"]
+_limits = [0.0, 1.0, 0.0, 32.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(32, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_836ik"]
 blend_mode = 4
@@ -311,7 +315,7 @@ _data = {
 
 [node name="main" type="Node" node_paths=PackedStringArray("micro_games")]
 script = ExtResource("1_2d37k")
-micro_games = [NodePath("monitor/sub_viewport_container/sub_viewport/checkbox"), NodePath("monitor/sub_viewport_container/sub_viewport/password")]
+micro_games = [NodePath("monitor/sub_viewport_container/sub_viewport/checkbox"), NodePath("monitor/sub_viewport_container/sub_viewport/password"), NodePath("monitor/sub_viewport_container/sub_viewport/select_image")]
 lives = 2
 micro_game_time_scale_curve = SubResource("Curve_836ik")
 micro_game_difficulty_scale_curve = SubResource("Curve_ujfqy")
@@ -378,6 +382,8 @@ script = ExtResource("1_db5cl")
 [node name="checkbox" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("3_ujfqy")]
 
 [node name="password" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("4_qdlv5")]
+
+[node name="select_image" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("6_qdlv5")]
 
 [node name="sprite_2d" type="Sprite2D" parent="monitor/sub_viewport_container/sub_viewport"]
 visible = false
