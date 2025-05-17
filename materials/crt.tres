@@ -1,10 +1,14 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dsrfmxkhxatis"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dsrfmxkhxatis"]
 
-[ext_resource type="Shader" uid="uid://mxcgp6lbhrmp" path="res://shaders/crt.tres" id="1_n5xlt"]
-[ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="2_31s4w"]
+[ext_resource type="Shader" uid="uid://jnhugy56jqcm" path="res://shaders/crt.tres" id="1_n5xlt"]
 
 [resource]
-render_priority = 0
 shader = ExtResource("1_n5xlt")
-shader_parameter/TestTexture = ExtResource("2_31s4w")
-shader_parameter/ColorMult = Color(0.905882, 0.486275, 0, 1)
+shader_parameter/BaseTint = Color(1, 1, 1, 1)
+shader_parameter/NoiseScrollSpeed = Vector2(0, -2)
+shader_parameter/NoiseStrength = 0.0
+shader_parameter/ScanLineTint = Color(0.443137, 0.443137, 0.443137, 0.560784)
+shader_parameter/ScanLineWidth = 0.8
+shader_parameter/ScanLineHeight = 4.0
+shader_parameter/ScanLineScrollSpeed = 0.2
+shader_parameter/FinalTint = Color(1, 1, 1, 0.215686)

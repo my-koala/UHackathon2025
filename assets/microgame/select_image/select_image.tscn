@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://fmot7xfs8qm8"]
+
+[ext_resource type="Script" uid="uid://4bpnmghu73mc" path="res://scripts/microgame/select_image/select_image.gd" id="1_f4jky"]
+[ext_resource type="Texture2D" uid="uid://jgvgps126754" path="res://assets/cursor/cursor_arrow.png" id="2_qira8"]
+[ext_resource type="Texture2D" uid="uid://cstl3soj1n5fu" path="res://assets/cursor/cursor_hand.png" id="3_ig40c"]
+[ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="4_ms7y0"]
+
+[node name="select_image" type="Control" node_paths=PackedStringArray("buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f4jky")
+image_library = Array[Texture2D]([ExtResource("2_qira8"), ExtResource("3_ig40c"), ExtResource("4_ms7y0")])
+buttons = [NodePath("grid_container/texture_button"), NodePath("grid_container/texture_button2"), NodePath("grid_container/texture_button3"), NodePath("grid_container/texture_button4"), NodePath("grid_container/texture_button5"), NodePath("grid_container/texture_button6"), NodePath("grid_container/texture_button7"), NodePath("grid_container/texture_button8"), NodePath("grid_container/texture_button9")]
+metadata/_custom_type_script = "uid://bb26s1tf5ti1f"
+
+[node name="label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Select all %ss"
+horizontal_alignment = 1
+
+[node name="grid_container" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -90.0
+offset_right = 90.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="texture_button" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button2" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button3" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button4" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button5" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button6" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button7" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button8" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="texture_button9" type="TextureButton" parent="grid_container"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0

@@ -266,7 +266,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-130.413, -706.337)
+graph_offset = Vector2(-429.298, -670.822)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(4760, -1100)

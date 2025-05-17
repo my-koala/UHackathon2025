@@ -6,8 +6,9 @@
 resource_local_to_scene = true
 noise_type = 0
 seed = 1020
-frequency = 0.307
-offset = Vector3(0, 133.33, 0)
+frequency = 0.16
+offset = Vector3(0, 389.74, 0)
+fractal_octaves = 2
 
 [resource]
 resource_name = "test"

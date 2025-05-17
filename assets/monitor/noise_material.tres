@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://mxqp3miyfvbt"]
+
+[ext_resource type="Shader" uid="uid://cjl4wykk6sdc0" path="res://shaders/noise.tres" id="1_pm5m1"]
+[ext_resource type="Texture2D" uid="uid://caccu660klim6" path="res://assets/monitor/crt_noise.tres" id="2_5dkhw"]
+
+[resource]
+shader = ExtResource("1_pm5m1")
+shader_parameter/BaseColor = Color(0, 0, 0, 0)
+shader_parameter/NoiseScale = Vector2(1, 0.75)
+shader_parameter/NoiseScrollSpeed = Vector2(0, 65)
+shader_parameter/CRTNoise = ExtResource("2_5dkhw")
+shader_parameter/NoiseStrength = 0.35
