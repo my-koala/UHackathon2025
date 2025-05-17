@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://vmtxgpx5i7lx" path="res://assets/microgame/password/password.tscn" id="4_qdlv5"]
 [ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
 [ext_resource type="Material" uid="uid://dsrfmxkhxatis" path="res://materials/crt.tres" id="8_tkxyu"]
-[ext_resource type="Material" path="res://assets/monitor/noise_material.tres" id="9_fphxj"]
+[ext_resource type="Material" uid="uid://mxqp3miyfvbt" path="res://assets/monitor/noise_material.tres" id="9_fphxj"]
 
 [sub_resource type="Curve" id="Curve_836ik"]
 _limits = [1.0, 4.0, 0.0, 32.0]

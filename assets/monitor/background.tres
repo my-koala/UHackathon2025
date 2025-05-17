@@ -40,5 +40,5 @@ shader_parameter/ScrollSpeed2 = Vector2(0.1, 0.15)
 shader_parameter/Noise2 = SubResource("NoiseTexture2D_lpcdf")
 shader_parameter/NoiseColor2 = Color(0.999497, 0.358867, 0.719811, 1)
 shader_parameter/Speed = 0.12
-shader_parameter/MainColor2 = Color(0.48, 0.48, 0.456, 1)
-shader_parameter/MainColorLerpAmount = 0.73
+shader_parameter/MainColor2 = Color(0.29, 0.29, 0.29, 1)
+shader_parameter/MainColorLerpAmount = 0.7
