@@ -24,6 +24,6 @@ func _generate_word(chars : String, length : int) -> String:
 		word += chars[randi() % len(chars)]
 	return word
 
-func _text_changed() -> void:
+func _text_changed(new_text: String) -> void:
 	if (password_entry.text == password_label.text):
 		complete(true)
