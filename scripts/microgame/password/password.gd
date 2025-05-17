@@ -12,6 +12,16 @@ var password_entry : LineEdit = $text_edit
 
 var _char_list : String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ23456789"
 
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	
+	if OS.get_name() == "Web":
+		# disable shader dirty hack
+		pass
+		text_material.free()
+		text_material = null
+
 func start(time_scale: float, difficulty_scaling: float) -> void:
 	password_label.text = ""
 	password_entry.text = ""
@@ -22,7 +32,8 @@ func start(time_scale: float, difficulty_scaling: float) -> void:
 	password_entry.grab_focus()
 	
 	# apply difficulty scaling to shader
-	text_material.set_shader_parameter("DifficultyScale", lerpf(0.35, 1.25, difficulty_scaling))
+	if is_instance_valid(text_material):
+		text_material.set_shader_parameter("DifficultyScale", lerpf(0.35, 1.25, difficulty_scaling))
 	
 
 func _generate_word(chars : String, length : int) -> String:
