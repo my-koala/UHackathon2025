@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=23 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwly1nwkb1tnf" path="res://assets/monitor_frame.png" id="2_836ik"]
 [ext_resource type="Texture2D" uid="uid://dcylcxnp7d71s" path="res://assets/background/background.png" id="2_vqaxa"]
 [ext_resource type="PackedScene" uid="uid://3iodv31k20n7" path="res://assets/microgame/checkbox/checkbox.tscn" id="3_ujfqy"]
+[ext_resource type="Material" uid="uid://bne7xrjinbxjt" path="res://assets/monitor/background.tres" id="4_m5usj"]
 [ext_resource type="PackedScene" uid="uid://vmtxgpx5i7lx" path="res://assets/microgame/password/password.tscn" id="4_qdlv5"]
 [ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
 [ext_resource type="Material" uid="uid://dsrfmxkhxatis" path="res://materials/crt.tres" id="8_tkxyu"]
@@ -549,6 +550,14 @@ size_2d_override = Vector2i(400, 300)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 script = ExtResource("1_db5cl")
+
+[node name="color_rect" type="ColorRect" parent="monitor/sub_viewport_container/sub_viewport"]
+material = ExtResource("4_m5usj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="checkbox" parent="monitor/sub_viewport_container/sub_viewport" instance=ExtResource("3_ujfqy")]
 

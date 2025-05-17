@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b23e4qvo3eipn"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bne7xrjinbxjt"]
 
-[ext_resource type="Shader" uid="uid://csjrqoce3xwoq" path="res://shaders/background.tres" id="1_ib20c"]
+[ext_resource type="Shader" uid="uid://ssmbqhacwwnw" path="res://shaders/background.tres" id="1_ib20c"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ib20c"]
 noise_type = 2
