@@ -17,6 +17,12 @@ func start(time_scale: float) -> void:
 	_time_left = time_duration
 	_running = true
 
+func complete(success: bool) -> void:
+	on_complete.emit(false)
+	_running = false
+	
+	print("Microgame completed. Successful: " + str(success))
+
 func _physics_process(delta: float) -> void:
 	if !_running:
 		return
@@ -24,5 +30,4 @@ func _physics_process(delta: float) -> void:
 	_time_left -= time_scale * delta
 	
 	if (_time_left <= 0):
-		on_complete.emit(false)
-		_running = false
+		complete(false)
