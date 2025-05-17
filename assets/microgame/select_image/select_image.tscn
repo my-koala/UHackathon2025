@@ -1,15 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://fmot7xfs8qm8"]
+[gd_scene load_steps=8 format=3 uid="uid://fmot7xfs8qm8"]
 
 [ext_resource type="Script" uid="uid://4bpnmghu73mc" path="res://scripts/microgame/select_image/select_image.gd" id="1_f4jky"]
 [ext_resource type="Texture2D" uid="uid://cyjx1kun5tkpq" path="res://assets/animals/capybara.png" id="2_itq2j"]
 [ext_resource type="Texture2D" uid="uid://cc8byspxj2swg" path="res://assets/animals/cat.png" id="3_7s8w8"]
 [ext_resource type="Texture2D" uid="uid://bq4co4xdwatyf" path="res://assets/animals/koala.png" id="4_jjhtj"]
 [ext_resource type="Texture2D" uid="uid://dius56u3om7a" path="res://assets/animals/mouse.png" id="5_1m2b4"]
-[ext_resource type="PackedScene" uid="uid://np2gxgfygelv" path="res://assets/microgame/select_image/image_button.tscn" id="5_ig40c"]
 [ext_resource type="Texture2D" uid="uid://f64r3q407sc3" path="res://assets/animals/rabbit.png" id="6_0duk2"]
 [ext_resource type="Texture2D" uid="uid://dcyq6b3angw7h" path="res://assets/animals/seal.png" id="7_4kt2j"]
 
-[node name="select_image" type="Control" node_paths=PackedStringArray("buttons")]
+[node name="select_image" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f4jky")
 image_library = Array[Texture2D]([ExtResource("2_itq2j"), ExtResource("3_7s8w8"), ExtResource("4_jjhtj"), ExtResource("5_1m2b4"), ExtResource("6_0duk2"), ExtResource("7_4kt2j")])
-buttons = [NodePath("grid_container/texture_button"), NodePath("grid_container/texture_button2"), NodePath("grid_container/texture_button3"), NodePath("grid_container/texture_button4"), NodePath("grid_container/texture_button5"), NodePath("grid_container/texture_button6"), NodePath("grid_container/texture_button7"), NodePath("grid_container/texture_button8"), NodePath("grid_container/texture_button9")]
 metadata/_custom_type_script = "uid://bb26s1tf5ti1f"
 
 [node name="label" type="RichTextLabel" parent="."]
@@ -51,30 +49,3 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
-
-[node name="texture_button" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button2" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button3" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button4" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button5" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button6" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button7" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button8" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
-
-[node name="texture_button9" parent="grid_container" instance=ExtResource("5_ig40c")]
-layout_mode = 2
