@@ -31,6 +31,8 @@ func start(time_scale: float, difficulty_scaling: float) -> void:
 	
 	# Populate our texture buttons with random images from our subset
 	for button: TextureButton in buttons:
+		button.set_pressed_no_signal(false)
+		
 		var image: Texture2D = image_library[randi() %  image_library.size()]
 		button.texture_normal = image
 		
