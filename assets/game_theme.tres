@@ -21,5 +21,9 @@ texture_margin_bottom = 20.0
 [resource]
 default_font = ExtResource("1_tgk0f")
 default_font_size = 16
+CheckBox/constants/outline_size = 8
+Label/constants/outline_size = 8
+LineEdit/constants/outline_size = 8
 ProgressBar/styles/background = SubResource("StyleBoxTexture_ercdv")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_aaxgn")
+RichTextLabel/constants/outline_size = 8
