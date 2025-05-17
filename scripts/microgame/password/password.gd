@@ -5,7 +5,7 @@ extends MicroGame
 var password_label : Label = $label2
 
 @onready
-var password_entry : TextEdit = $text_edit
+var password_entry : LineEdit = $text_edit
 
 var _char_list : String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
