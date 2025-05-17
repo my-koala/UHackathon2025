@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=24 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" uid="uid://dc7164llywjw6" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
 [ext_resource type="Material" uid="uid://dsrfmxkhxatis" path="res://materials/crt.tres" id="8_tkxyu"]
 [ext_resource type="Material" uid="uid://mxqp3miyfvbt" path="res://assets/monitor/noise_material.tres" id="9_fphxj"]
+[ext_resource type="Texture2D" uid="uid://bfpci6eili2kf" path="res://assets/background/zoo.png" id="12_otm8r"]
 
 [sub_resource type="Curve" id="Curve_836ik"]
 _limits = [1.0, 4.0, 0.0, 32.0]
@@ -643,7 +644,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="texture_rect" type="TextureRect" parent="gameover"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_otm8r")
+
 [node name="color_rect" type="ColorRect" parent="gameover"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
