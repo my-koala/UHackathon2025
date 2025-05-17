@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=22 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
 [ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="2_06ig3"]
 [ext_resource type="Texture2D" uid="uid://bwly1nwkb1tnf" path="res://assets/monitor_frame.png" id="2_836ik"]
+[ext_resource type="Texture2D" uid="uid://dcylcxnp7d71s" path="res://assets/background/background.png" id="2_vqaxa"]
 [ext_resource type="PackedScene" uid="uid://3iodv31k20n7" path="res://assets/microgame/checkbox/checkbox.tscn" id="3_ujfqy"]
 [ext_resource type="PackedScene" uid="uid://vmtxgpx5i7lx" path="res://assets/microgame/password/password.tscn" id="4_qdlv5"]
 [ext_resource type="PackedScene" uid="uid://fmot7xfs8qm8" path="res://assets/microgame/select_image/select_image.tscn" id="6_qdlv5"]
@@ -475,6 +476,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="texture_rect" type="TextureRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.835, 1.835)
+pivot_offset = Vector2(200, 150)
+texture = ExtResource("2_vqaxa")
+expand_mode = 1
 
 [node name="overlay" type="ColorRect" parent="background"]
 material = SubResource("CanvasItemMaterial_836ik")
