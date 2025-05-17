@@ -4,6 +4,8 @@ extends Node
 # TODO: static noise animation
 # TODO: gameover, lives check
 
+const LIFE_INSTANCE_SCENE: PackedScene = preload("res://assets/life/life_instance.tscn")
+
 @export
 var micro_games: Array[MicroGame] = []
 var _micro_game_current: MicroGame = null
@@ -18,6 +20,13 @@ var _micro_game_iteration: int = 0
 @export
 var micro_game_time_scale_curve: Curve = Curve.new()
 
+@export
+var micro_game_difficulty_scale_curve: Curve = Curve.new()
+
+var _life_instances: Array[LifeInstance] = []
+
+@onready
+var _life_instance_container: HBoxContainer = $background/lives_container as HBoxContainer
 @onready
 var _animation_player: AnimationPlayer = $animation_player as AnimationPlayer
 @onready
@@ -46,6 +55,17 @@ func loop_start() -> void:
 	if _micro_game_loop:
 		return
 	_micro_game_loop = true
+	
+	# initialize life instances
+	while _life_instances.size() < lives:
+		var life_instance: LifeInstance = LIFE_INSTANCE_SCENE.instantiate() as LifeInstance
+		_life_instance_container.add_child(life_instance)
+		_life_instances.push_front(life_instance)
+	
+	for life_instance: LifeInstance in _life_instances:
+		if life_instance.is_dead():
+			life_instance.make_dead_not()
+	
 	_lives = lives
 	_micro_game_iteration = 0
 	micro_games.shuffle()
@@ -64,6 +84,10 @@ func _on_current_microgame_completed(success: bool) -> void:
 	if !success:
 		print("not successful, decrement lives")
 		_lives -= 1
+		for life_instance: LifeInstance in _life_instances:
+			if !life_instance.is_dead():
+				life_instance.make_dead()
+				break
 		# TODO: play life lost animation
 	else:
 		print("successful")

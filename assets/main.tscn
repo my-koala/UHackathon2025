@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=18 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" uid="uid://dc7164llywjw6" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
@@ -12,9 +12,50 @@ _limits = [1.0, 4.0, 0.0, 32.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(32, 4), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_ujfqy"]
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_836ik"]
 blend_mode = 4
 light_mode = 1
+
+[sub_resource type="Animation" id="Animation_qdlv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("button_restart:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ujfqy"]
 resource_name = "gameover_enter"
@@ -55,45 +96,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_qdlv5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("button_restart:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_tkxyu"]
@@ -312,6 +314,7 @@ script = ExtResource("1_2d37k")
 micro_games = [NodePath("monitor/sub_viewport_container/sub_viewport/checkbox"), NodePath("monitor/sub_viewport_container/sub_viewport/password")]
 lives = 2
 micro_game_time_scale_curve = SubResource("Curve_836ik")
+micro_game_difficulty_scale_curve = SubResource("Curve_ujfqy")
 
 [node name="background" type="Control" parent="."]
 layout_mode = 3
@@ -330,6 +333,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="lives_container" type="HBoxContainer" parent="background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 56.0
+grow_horizontal = 2
+alignment = 1
 
 [node name="monitor" type="Control" parent="."]
 layout_mode = 3
@@ -353,6 +365,7 @@ stretch = true
 
 [node name="sub_viewport" type="SubViewport" parent="monitor/sub_viewport_container"]
 disable_3d = true
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
 physics_object_picking = true
