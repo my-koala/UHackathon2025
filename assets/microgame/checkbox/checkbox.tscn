@@ -29,7 +29,7 @@ grow_vertical = 2
 text = "I am not a Robot"
 script = ExtResource("2_5hyha")
 defaultPosition = Vector2(119.5, 134.5)
-maxBounds = Vector2(125, 143)
+maxBounds = Vector2(130, 143)
 speed = 450.0
 
 [connection signal="pressed" from="check_box" to="." method="complete" binds= [true]]

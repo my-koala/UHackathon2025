@@ -1,0 +1,44 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bne7xrjinbxjt"]
+
+[ext_resource type="Shader" uid="uid://ssmbqhacwwnw" path="res://shaders/background.tres" id="1_ib20c"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ib20c"]
+noise_type = 2
+frequency = 0.003
+offset = Vector3(0, 329.67, 0)
+fractal_octaves = 4
+fractal_lacunarity = 1.61
+fractal_gain = 0.76
+cellular_jitter = 0.72
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8tq5o"]
+seamless = true
+noise = SubResource("FastNoiseLite_ib20c")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h1fhf"]
+noise_type = 2
+seed = 880
+frequency = 0.0053
+offset = Vector3(0, 175.82, 0)
+fractal_octaves = 2
+fractal_lacunarity = 1.81
+fractal_gain = 0.13
+domain_warp_enabled = true
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lpcdf"]
+seamless = true
+noise = SubResource("FastNoiseLite_h1fhf")
+
+[resource]
+shader = ExtResource("1_ib20c")
+shader_parameter/ScrollSpeed = Vector2(0.2, 0.15)
+shader_parameter/Noise1 = SubResource("NoiseTexture2D_8tq5o")
+shader_parameter/NoiseAdd = Vector4(0.5, 0.5, 0.5, 0)
+shader_parameter/NoiseColor1 = Color(0, 0.594833, 0.83, 1)
+shader_parameter/ScrollSpeed2 = Vector2(0.1, 0.15)
+shader_parameter/Noise2 = SubResource("NoiseTexture2D_lpcdf")
+shader_parameter/NoiseColor2 = Color(0.999497, 0.358867, 0.719811, 1)
+shader_parameter/Speed = 0.12
+shader_parameter/MainColor2 = Color(0.29, 0.29, 0.29, 1)
+shader_parameter/MainColorLerpAmount = 0.7

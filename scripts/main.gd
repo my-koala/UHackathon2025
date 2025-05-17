@@ -35,6 +35,8 @@ var _gameover_button_restart: Button = $gameover/button_restart as Button
 var _gameover_label_score: Label = $gameover/label_score as Label
 @onready
 var _gameover_animation_player: AnimationPlayer = $gameover/animation_player as AnimationPlayer
+@onready
+var _microgame_progress_bar: ProgressBar = $monitor/sub_viewport_container/sub_viewport/progress_bar as ProgressBar
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -119,8 +121,16 @@ func _set_next_microgame() -> void:
 	# TODO: await for animation?
 	await get_tree().create_timer(1.0).timeout
 	
+	_microgame_progress_bar.value = 1
+	
 	_animation_player.play(&"microgame_enter")
 	await _animation_player.animation_finished
 	var time_scale: float = micro_game_time_scale_curve.sample(float(_micro_game_iteration))
 	var difficulty_scale: float = micro_game_difficulty_scale_curve.sample(float(_micro_game_iteration))
 	_micro_game_current.start(time_scale, difficulty_scale)
+
+func _process(delta: float) -> void:
+	if _micro_game_current == null:
+		return
+	
+	_microgame_progress_bar.value = _micro_game_current.get_time_left()

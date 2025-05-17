@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://cjl4wykk6sdc0"]
+[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://bk6rtplhuhbc7"]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_nkhpx"]
 default_input_values = [0, Quaternion(0, 0, 0, 0)]
@@ -120,29 +120,21 @@ void fragment() {
 	vec4 n_out8p0 = mix(n_out9p0, n_out5p0, vec4(n_out7p0));
 
 
-// Input:17
-	vec4 n_out17p0 = COLOR;
-
-
-// VectorOp:18
-	vec4 n_out18p0 = n_out8p0 * n_out17p0;
-
-
 // VectorDecompose:10
-	float n_out10p0 = n_out18p0.x;
-	float n_out10p1 = n_out18p0.y;
-	float n_out10p2 = n_out18p0.z;
-	float n_out10p3 = n_out18p0.w;
+	float n_out10p0 = n_out8p0.x;
+	float n_out10p1 = n_out8p0.y;
+	float n_out10p2 = n_out8p0.z;
+	float n_out10p3 = n_out8p0.w;
 
 
 // Output:0
-	COLOR.rgb = vec3(n_out18p0.xyz);
+	COLOR.rgb = vec3(n_out8p0.xyz);
 	COLOR.a = n_out10p3;
 
 
 }
 "
-graph_offset = Vector2(16.5023, 47.0786)
+graph_offset = Vector2(-506.38, -285.155)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(1380, 900)
@@ -176,4 +168,4 @@ nodes/fragment/17/node = SubResource("VisualShaderNodeInput_00ubi")
 nodes/fragment/17/position = Vector2(220, 940)
 nodes/fragment/18/node = SubResource("VisualShaderNodeVectorOp_f5vh0")
 nodes/fragment/18/position = Vector2(820, 500)
-nodes/fragment/connections = PackedInt32Array(6, 0, 5, 2, 2, 0, 3, 1, 3, 0, 4, 1, 4, 0, 5, 0, 7, 0, 8, 2, 9, 0, 8, 0, 5, 0, 8, 1, 8, 0, 10, 0, 10, 3, 0, 1, 8, 0, 0, 0, 11, 0, 3, 0, 12, 0, 13, 0, 14, 0, 13, 1, 13, 0, 4, 0, 17, 0, 18, 1, 8, 0, 18, 0, 18, 0, 10, 0, 18, 0, 0, 0)
+nodes/fragment/connections = PackedInt32Array(6, 0, 5, 2, 2, 0, 3, 1, 3, 0, 4, 1, 4, 0, 5, 0, 7, 0, 8, 2, 9, 0, 8, 0, 5, 0, 8, 1, 10, 3, 0, 1, 11, 0, 3, 0, 12, 0, 13, 0, 14, 0, 13, 1, 13, 0, 4, 0, 17, 0, 18, 1, 8, 0, 18, 0, 18, 0, 10, 0, 18, 0, 0, 0, 8, 0, 10, 0, 8, 0, 0, 0)

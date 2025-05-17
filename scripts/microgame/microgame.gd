@@ -11,7 +11,7 @@ var _time_left: float = 7.5
 var _running: bool = false
 
 func get_time_left() -> float:
-	return _time_left
+	return _time_left / time_duration
 
 ## Starts the microgame
 func start(time_scale: float, difficulty_scale: float) -> void:
