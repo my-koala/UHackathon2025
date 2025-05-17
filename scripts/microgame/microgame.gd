@@ -10,10 +10,6 @@ var _time_scale: float = 1
 var _time_left: float = 7.5
 var _running: bool = false
 
-## DEBUG UNTIL THE GAME LOOP IS DONE
-func _ready() -> void:
-	start(1, 0)
-
 func get_time_left() -> float:
 	return _time_left
 

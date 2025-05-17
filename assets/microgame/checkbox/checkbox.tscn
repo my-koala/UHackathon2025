@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3iodv31k20n7"]
+[gd_scene load_steps=3 format=3 uid="uid://3iodv31k20n7"]
 
 [ext_resource type="Script" uid="uid://fo2x43xlgw48" path="res://scripts/microgame/checkbox/checkbox.gd" id="1_prmbb"]
+[ext_resource type="Script" uid="uid://d3i3xemua7gkm" path="res://scripts/microgame/checkbox/checkbox-dvd.gd" id="2_5hyha"]
 
 [node name="checkbox" type="Control"]
 layout_mode = 3
@@ -26,5 +27,9 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "I am not a Robot"
+script = ExtResource("2_5hyha")
+defaultPosition = Vector2(119.5, 134.5)
+maxBounds = Vector2(125, 143)
+speed = 450.0
 
 [connection signal="pressed" from="check_box" to="." method="complete" binds= [true]]

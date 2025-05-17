@@ -5,8 +5,8 @@
 
 [resource]
 shader = ExtResource("1_pm5m1")
-shader_parameter/BaseColor = Color(0, 0, 0, 0)
-shader_parameter/NoiseScale = Vector2(1, 0.75)
+shader_parameter/BaseColor = Color(0.549791, 0.57923, 0.547234, 1)
+shader_parameter/NoiseScale = Vector2(0.5, 1)
 shader_parameter/NoiseScrollSpeed = Vector2(0, 65)
 shader_parameter/CRTNoise = ExtResource("2_5dkhw")
-shader_parameter/NoiseStrength = 0.35
+shader_parameter/NoiseStrength = 0.62
