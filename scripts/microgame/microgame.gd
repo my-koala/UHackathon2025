@@ -11,6 +11,10 @@ var time_scale: float = 1
 var _time_left: float = 7.5
 var _running: bool = false
 
+## DEBUG UNTIL THE GAME LOOP IS DONE
+func _ready() -> void:
+	start(1)
+
 ## Starts the microgame
 func start(time_scale: float) -> void:
 	self.time_scale = time_scale
@@ -18,6 +22,9 @@ func start(time_scale: float) -> void:
 	_running = true
 
 func complete(success: bool) -> void:
+	if !_running:
+		return
+	
 	on_complete.emit(false)
 	_running = false
 	
