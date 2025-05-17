@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cysr4ls3c67mr"]
+[gd_scene load_steps=10 format=3 uid="uid://cysr4ls3c67mr"]
 
 [ext_resource type="Script" uid="uid://dfd7i7fey6h05" path="res://scripts/main.gd" id="1_2d37k"]
 [ext_resource type="Script" uid="uid://dc7164llywjw6" path="res://scripts/scaling_sub_viewport.gd" id="1_db5cl"]
 [ext_resource type="Texture2D" uid="uid://dlhm8ss4r1mfs" path="res://icon.svg" id="2_06ig3"]
 [ext_resource type="Texture2D" uid="uid://bwly1nwkb1tnf" path="res://assets/monitor_frame.png" id="2_836ik"]
-
-[sub_resource type="Curve" id="Curve_2d37k"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_836ik"]
 blend_mode = 4
@@ -188,8 +186,7 @@ _data = {
 
 [node name="main" type="Node"]
 script = ExtResource("1_2d37k")
-lives = null
-minigame_time_scale_curve = SubResource("Curve_2d37k")
+run_micro_games = null
 
 [node name="background" type="Control" parent="."]
 layout_mode = 3

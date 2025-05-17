@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="UHackathon2025"
+run/main_scene="uid://cysr4ls3c67mr"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
